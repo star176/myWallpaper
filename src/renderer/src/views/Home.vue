@@ -13,7 +13,9 @@
       设为壁纸
     </div>
     <div class="flex items-center justify-end mx-3 text-xs text-gray-700">
-      <div class="text-sm cursor-pointer hover:font-bold nodrag" @click="downloadPic">下载壁纸</div>
+      <div class="text-sm cursor-pointer hover:font-bold nodrag" @click="downloadImage">
+        下载壁纸
+      </div>
     </div>
   </main>
 </template>
@@ -21,8 +23,10 @@
 import { useConfigStore } from '@renderer/store/useConfigStore'
 import { ref, onMounted } from 'vue'
 import { ElLoading, ElMessage } from 'element-plus'
+import useWallpaper from '../composable/useWallpaper'
 import http from '../http/axios'
 
+const { downloadImage } = useWallpaper()
 const configStore = useConfigStore()
 const img = ref<HTMLImageElement>()
 
@@ -53,11 +57,6 @@ const load = async () => {
     loading.close()
   })
 }
-
-/**
- *
- */
-const downloadPic = () => {}
 
 onMounted(() => {
   console.log('Home mounted')

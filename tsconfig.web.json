@@ -4,9 +4,9 @@
     "src/renderer/src/env.d.ts",
     "src/renderer/src/**/*",
     "src/renderer/src/**/*.vue",
+    "src/renderer/src/**/*.ts",
     "src/preload/*.d.ts",
-    "src/renderer/src/store/useConfigStore.ts",
-    "src/renderer/src/http/axios.ts"
+
   ],
   "compilerOptions": {
     "composite": true,
