@@ -2,7 +2,6 @@ import ElementPlus from 'element-plus'
 import '@renderer/assets/global.scss'
 import '@renderer/assets/tailwind.css'
 import 'element-plus/dist/index.css'
-
 import router from './router'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'

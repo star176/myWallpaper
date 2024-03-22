@@ -1,18 +1,18 @@
 <template>
-  <main class="px-3 py-2 text-sm opacity-80 flex justify-between items-center drag">
-    <section class="text-xs opacity-80">壁纸</section>
+  <main class="flex items-center justify-between px-3 py-2 text-sm opacity-80 drag">
+    <section class="text-xs opacity-80">我的壁纸</section>
     <section class="flex items-center justify-center gap-2">
       <Pic
         theme="outline"
         size="20"
-        class="cursor-pointer nodrag text-gray-500"
+        class="text-gray-500 cursor-pointer nodrag"
         :class="{ iconColor: $route.name == 'home' }"
         @click="$router.push({ name: 'home' })"
       />
       <SettingOne
         theme="outline"
         size="20"
-        class="cursor-pointer nodrag text-gray-500"
+        class="text-gray-500 cursor-pointer nodrag"
         :class="{ iconColor: $route.name == 'setting' }"
         @click="$router.push({ name: 'setting' })"
       />
