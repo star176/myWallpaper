@@ -3,3 +3,9 @@ dist
 out
 .DS_Store
 *.log*
+*.log
+*.log.*
+yarn.lock
+package-lock.json
+```
+

@@ -28,8 +28,10 @@
     "axios": "^1.6.8",
     "electron-updater": "^6.1.7",
     "element-plus": "^2.6.1",
+    "node-fetch": "^3.3.2",
     "pinia": "^2.1.7",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "wallpaper": "5.0.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",
