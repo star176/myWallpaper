@@ -1,1 +1,2 @@
 import './setWallpaper'
+import './setImageDirectory'

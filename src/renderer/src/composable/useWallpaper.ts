@@ -6,10 +6,11 @@ export default () => {
   const { config } = useConfigStore()
   // 设置壁纸
   const setWallpaper = async () => {
+    console.log('setWallpaper---1')
     const state = await window.api.checkDirectory(config.saveDirectory)
     if (!state) {
       ElMessage({
-        message: '壁纸设置失败',
+        message: '图片保存目录无效',
         type: 'error'
       })
       return router.push({ name: 'setting' })
@@ -22,6 +23,7 @@ export default () => {
   }
   //   设置图片保存目录
   const setImageSaveDirectory = async () => {
+    console.log('setImageSaveDirectory11')
     const path = await window.api.setImageSaveDirectory()
     if (path) {
       config.saveDirectory = path

@@ -7,22 +7,23 @@
           v-model="configStore.config.saveDirectory"
           disabled
           placeholder="请选择壁纸保存目录"
-          size="normal"
+          size="default"
           clearable
         >
         </el-input>
-        <el-button type="primary" size="default" @click="chooseDir">选择图片保存目录</el-button>
+        <el-button type="primary" size="default" @click="setImageSaveDirectory"
+          >选择图片保存目录</el-button
+        >
       </div>
     </section>
   </main>
 </template>
 <script setup lang="ts">
 import { useConfigStore } from '@renderer/store/useConfigStore'
-const configStore = useConfigStore()
+import useWallpaper from '@renderer/composable/useWallpaper'
 
-const chooseDir = () => {
-  console.log('chooseDir')
-}
+const { setImageSaveDirectory } = useWallpaper()
+const configStore = useConfigStore()
 </script>
 <style lang="scss" scoped></style>
 ```

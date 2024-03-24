@@ -4,7 +4,6 @@ import { promisify } from 'util'
 import fs from 'fs'
 import fetch from 'node-fetch'
 
-
 export const downloadFile = async (url: string, localFile: string) => {
   const streamPipeline = promisify(pipeline)
   const response = await fetch(url)

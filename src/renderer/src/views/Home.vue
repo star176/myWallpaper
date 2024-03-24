@@ -9,6 +9,7 @@
     />
     <div
       class="py-3 m-3 text-center duration-500 bg-white rounded-lg cursor-pointer opacity-70 hover:opacity-100 hover:bg-gray-300 hover:shadow-sm nodrag"
+      @click="setWallpaper"
     >
       设为壁纸
     </div>
@@ -23,10 +24,10 @@
 import { useConfigStore } from '@renderer/store/useConfigStore'
 import { ref, onMounted } from 'vue'
 import { ElLoading, ElMessage } from 'element-plus'
-import useWallpaper from '../composable/useWallpaper'
 import http from '../http/axios'
+import useWallpaper from '../composable/useWallpaper'
 
-const { downloadImage } = useWallpaper()
+const { setWallpaper, downloadImage } = useWallpaper()
 const configStore = useConfigStore()
 const img = ref<HTMLImageElement>()
 
