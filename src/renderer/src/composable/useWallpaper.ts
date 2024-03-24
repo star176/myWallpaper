@@ -15,7 +15,18 @@ export default () => {
       })
       return router.push({ name: 'setting' })
     }
-    window.api.setWallpaper(config.url, config.saveDirectory)
+    const res = await window.api.setWallpaper(config.url, config.saveDirectory)
+    if (res === 'success') {
+      ElMessage({
+        message: '设置成功',
+        type: 'success'
+      })
+    } else {
+      ElMessage({
+        message: '设置失败',
+        type: 'error'
+      })
+    }
   }
   //  下载图片
   const downloadImage = () => {

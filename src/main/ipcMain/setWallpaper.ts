@@ -1,11 +1,10 @@
-import { IpcMainEvent, ipcMain } from 'electron'
+import { IpcMainInvokeEvent, ipcMain } from 'electron'
 import { resolve } from 'path'
 import wallpaper from 'wallpaper'
 import { downloadFile } from '../util'
 import fs from 'fs'
-import { IpcMainInvokeEvent } from 'electron/main'
 
-ipcMain.on('setWallpaper', async (_event: IpcMainEvent, url: string, path: string) => {
+ipcMain.handle('setWallpaper', async (_event: IpcMainInvokeEvent, url: string, path: string) => {
   try {
     const localFile = resolve(path, url.split('/').pop()!)
     const file = await downloadFile(url, localFile)
@@ -13,8 +12,9 @@ ipcMain.on('setWallpaper', async (_event: IpcMainEvent, url: string, path: strin
       screen: 'all',
       scale: 'auto'
     })
+    return 'success'
   } catch (e) {
-    console.log('setWallper error', e)
+    return 'error'
   }
 })
 ipcMain.handle('checkDirectory', (_event: IpcMainInvokeEvent, path: string) => {

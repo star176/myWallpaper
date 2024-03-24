@@ -5,6 +5,7 @@ import { electronAPI } from '@electron-toolkit/preload'
 const api = {
   setWallpaper: (url: string, path: string) => {
     ipcRenderer.send('setWallpaper', url, path)
+    return ipcRenderer.invoke('setWallpaper', url, path)
   },
   downloadImage: (url: string) => {
     ipcRenderer.send('downloadImage', url)
