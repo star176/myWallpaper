@@ -5,11 +5,11 @@ import { downloadFile } from '../util'
 import fs from 'fs'
 import { IpcMainInvokeEvent } from 'electron/main'
 
-ipcMain.on('setWallpaper', (_event: IpcMainEvent, url: string, path: string) => {
+ipcMain.on('setWallpaper', async (_event: IpcMainEvent, url: string, path: string) => {
   console.log('setWallper')
   try {
     const localFile = resolve(path, url.split('/').pop()!)
-    const file = downloadFile(url, localFile)
+    const file = await downloadFile(url, localFile)
 
     wallpaper.set(file, {
       screen: 'all',
